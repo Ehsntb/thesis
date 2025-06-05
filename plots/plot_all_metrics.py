@@ -6,10 +6,10 @@ import os
 os.makedirs("plots", exist_ok=True)
 
 # Load CSV
-df = pd.read_csv("results/energy_delay.csv")
+df = pd.read_csv("../results/energy_delay.csv")
 
 # Define style
-plt.style.use("seaborn-vignette")
+plt.style.use("seaborn-v0_8-whitegrid")
 
 # Function to plot a specific metric
 def plot_metric(metric_col, ylabel, filename):
@@ -24,9 +24,9 @@ def plot_metric(metric_col, ylabel, filename):
     plt.grid(True, linestyle="--", alpha=0.5)
     plt.legend()
     plt.tight_layout()
-    plt.savefig(f"plots/{filename}")
+    plt.savefig(f"{filename}")
     plt.close()
-    print(f"[✔] Saved: plots/{filename}")
+    print(f"[✔] Saved: {filename}")
 
 # Plot 1: Avg Energy Sensor
 plot_metric("AvgEnergySensor(mJ)", "Average Sensor Energy (mJ)", "avg_sensor_energy.png")
