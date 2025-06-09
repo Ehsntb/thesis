@@ -20,6 +20,7 @@ class SensorNode : public cSimpleModule {
         if (batteryCapacity < consumptionPerMessage) {
             EV << "[SensorNode] Battery depleted. Node stopped.\n";
             delete msg;
+            sendEvent = nullptr;
             return;
         }
 
@@ -38,7 +39,9 @@ class SensorNode : public cSimpleModule {
         double percent = (batteryCapacity / 5000.0) * 100;
         EV << "[SensorNode] Energy Remaining: " << batteryCapacity
            << " mJ (" << percent << "%)\n";
-        cancelAndDelete(sendEvent);
+        if (sendEvent != nullptr) {
+            cancelAndDelete(sendEvent);
+        }
     }
 };
 
