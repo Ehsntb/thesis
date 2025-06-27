@@ -192,11 +192,12 @@ The documentation and codebase here represent not just a simulation, but a full-
 This section documents the technical setup, test configurations, and detailed runtime parameters for reproducibility and advanced benchmarking.
 
 ▶️ **Simulation Environment**:
-- **Simulator**: OMNeT++ 6.0+
+- **Simulator**: OMNeT++ 6.x (install from https://omnetpp.org/download)
 - **Execution Mode**: Both `Cmdenv` and `Qtenv` supported
 - **Platform**: Linux/macOS (Tested on Ubuntu 22.04 LTS)
 - **Compiler**: g++ 11+
-- **Python Version**: 3.10+ with required libraries in `analysis/requirements.txt` (optional)
+- **Python Version**: 3.10+
+- **Python Packages**: `pandas`, `matplotlib` (install with `pip install pandas matplotlib`)
 
 ▶️ **Node Configuration**:
 - Node counts tested: 5, 20, 50
